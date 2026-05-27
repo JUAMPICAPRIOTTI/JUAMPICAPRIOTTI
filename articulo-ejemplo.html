@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================ -->
+  <!--  COMPLETAR ESTOS CAMPOS PARA CADA ARTÍCULO NUEVO              -->
+  <!-- ============================================================ -->
+
+  <title>Título del primer artículo — Mi Blog</title>
+  <meta name="description" content="Una descripción breve del artículo, entre 100 y 160 caracteres. Aparece en Google y al compartir en redes.">
+  <meta name="author" content="Tu Nombre">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn, Telegram) -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://TU-USUARIO.github.io/articulo-ejemplo.html">
+  <meta property="og:title" content="Título del primer artículo">
+  <meta property="og:description" content="Una descripción breve del artículo, entre 100 y 160 caracteres.">
+  <meta property="og:image" content="https://TU-USUARIO.github.io/img/articulo-1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Texto que describe la imagen para accesibilidad">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Mi Blog">
+  <meta property="article:published_time" content="2026-05-27T10:00:00-03:00">
+  <meta property="article:author" content="Tu Nombre">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tu_usuario">
+  <meta name="twitter:creator" content="@tu_usuario">
+  <meta name="twitter:url" content="https://TU-USUARIO.github.io/articulo-ejemplo.html">
+  <meta name="twitter:title" content="Título del primer artículo">
+  <meta name="twitter:description" content="Una descripción breve del artículo, entre 100 y 160 caracteres.">
+  <meta name="twitter:image" content="https://TU-USUARIO.github.io/img/articulo-1.jpg">
+
+  <!-- ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --ink: #1a1a1a;
+      --muted: #6b6258;
+      --accent: #c0392b;
+      --line: #d8cfc2;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+    .wide { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Header */
+    header.site {
+      border-bottom: 1px solid var(--line);
+      padding: 1.5rem 0;
+      margin-bottom: 4rem;
+    }
+
+    header.site .wide {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .logo span { color: var(--accent); }
+
+    nav a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* Article header */
+    article header {
+      margin-bottom: 3rem;
+    }
+
+    .category {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    article h1 {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.2rem;
+    }
+
+    .subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+
+    .byline {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .byline strong { color: var(--ink); }
+
+    /* Cover image */
+    .cover {
+      width: 100%;
+      max-width: 1100px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cover figcaption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.8rem;
+      text-align: center;
+    }
+
+    /* Article body */
+    .body {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .body > p:first-of-type::first-letter {
+      font-weight: 900;
+      font-size: 4.5rem;
+      float: left;
+      line-height: 0.9;
+      margin: 0.3rem 0.6rem 0 0;
+      color: var(--accent);
+    }
+
+    .body p { margin-bottom: 1.5rem; }
+
+    .body h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      margin: 3rem 0 1rem;
+    }
+
+    .body blockquote {
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      color: var(--ink);
+    }
+
+    .body img {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+
+    .body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Share buttons */
+    .share {
+      margin: 4rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .share p {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .share a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      margin: 0 0.3rem;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+
+    .share a:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .back:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wide">
+      <a href="index.html" class="logo">Mi<span>Blog</span>.</a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <article>
+    <div class="wrap">
+      <a href="index.html" class="back">← Volver al inicio</a>
+
+      <header>
+        <div class="category">Ensayo</div>
+        <h1>Título del primer artículo</h1>
+        <p class="subtitle">Una bajada breve que prepare al lector para lo que viene. Suele resumir la idea central.</p>
+        <div class="byline">
+          <span>Por <strong>Tu Nombre</strong></span>
+          <span>27 de mayo, 2026</span>
+          <span>5 min de lectura</span>
+        </div>
+      </header>
+    </div>
+
+    <figure class="cover">
+      <img src="img/articulo-1.jpg" alt="Descripción accesible de la imagen de portada">
+      <figcaption>Pie de foto opcional. Crédito o contexto.</figcaption>
+    </figure>
+
+    <div class="wrap">
+      <div class="body">
+        <p>Acá empieza el cuerpo del artículo. La primera letra se transforma en una capital ornamental, al estilo editorial. Podés escribir párrafos largos sin preocuparte: la tipografía está pensada para una lectura cómoda en pantallas.</p>
+
+        <p>Otro párrafo va acá. La idea es que cada artículo se sienta como una página de revista: tipografía serif para el cuerpo, espacios generosos y una columna de lectura angosta que invita a quedarse.</p>
+
+        <h2>Un subtítulo cuando haga falta</h2>
+
+        <p>Podés organizar el texto con subtítulos. Funcionan bien para separar secciones.</p>
+
+        <blockquote>“Una cita o frase destacada puede ir así. Sirve para respirar entre bloques largos de texto.”</blockquote>
+
+        <p>Después de la cita seguís con más párrafos. Si querés insertar una imagen en el medio del texto, simplemente agregás otra etiqueta <code>&lt;img&gt;</code>.</p>
+
+        <img src="img/articulo-1-detalle.jpg" alt="Imagen secundaria del artículo">
+
+        <p>Y seguís escribiendo. <a href="#">Los enlaces se ven así</a> y te llevan a otra página o sección.</p>
+
+        <p>Para terminar, una reflexión final que cierre la idea.</p>
+      </div>
+
+      <div class="share">
+        <p>Compartir este artículo</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://TU-USUARIO.github.io/articulo-ejemplo.html" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url=https://TU-USUARIO.github.io/articulo-ejemplo.html&text=Título%20del%20primer%20artículo" target="_blank" rel="noopener">Twitter / X</a>
+        <a href="https://wa.me/?text=https://TU-USUARIO.github.io/articulo-ejemplo.html" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="wide">
+      © 2026 Mi Blog. &nbsp;·&nbsp; <a href="index.html">Volver al inicio</a>
+    </div>
+  </footer>
+
+</body>
+</html>
